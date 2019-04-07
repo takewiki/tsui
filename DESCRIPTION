@@ -1,11 +1,12 @@
 Package: tsui
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: user interface elements from shiny,H5,css,js in takewiki solutions
+Version: 0.1.1
+Author: hulilei
+Maintainer: hulilei <hulilei@takewiki.com.cn>
+Description: user interface element for ui elements,latout and actions,
+    mainly from shiny then from html5,css and js,also we want ui can produce
+    result in PDF,PPT,on-line system we can get both icon and templates.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
