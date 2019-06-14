@@ -10,3 +10,6 @@ Description: user interface element for ui elements,latout and actions,
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat
+RoxygenNote: 6.1.0
