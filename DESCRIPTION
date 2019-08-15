@@ -16,6 +16,7 @@ RoxygenNote: 6.1.1
 Collate: 
     'aaa_defineClasses.R'
     'bbb_shiny_input.R'
+    'ccc_ui.R'
     'shinyElement.R'
     'shinyInputElement.R'
     'superDate.R'

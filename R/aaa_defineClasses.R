@@ -1,3 +1,6 @@
+#定义UI 元数据结构-----
+# 实现参数的传入，与单据的实际没有关系
+
 #1.1 定义文本字段类型的S4----
 #' 定义ui_text iption的特殊类，用于存储相应的界面数据
 #'
@@ -80,7 +83,7 @@ setClass("ui_number_slider",
                         step=5,
                         width="400px"
                       ) );
-# 定义一个密码输入UI 插件 password----
+#1.2 定义密码字段类型S4----
 
 #' 创建日期控件的选项
 #'
@@ -131,7 +134,7 @@ ui_password <- function(inputId="password1",
 }
 
 
-# 2.1 定义数值类型的数据，整体数slider----
+# 2.1 定义数值字段类型S4----
 #' 定义使用创建ui_number_input实例化函数
 #'
 #' @param inputId 内码
@@ -167,7 +170,7 @@ ui_number_slider <- function(inputId="sliderInput1",
 
 }
 
-#3.1 定义日期型的控件ui_date 选项----
+#3.1 定义日期字段类型S4----
 #' 定义日期型的输入控件ui_date S4类
 #'
 #' @slot inputId character.内码
@@ -211,7 +214,7 @@ setClass("ui_date", slots = c(inputId = "character",
                               autoclose=TRUE
                     ))
 
-# ui_date实例化入口func ----
+
 #' ui_date实例化入口func
 #'
 #' @param inputId 内码
@@ -257,7 +260,7 @@ ui_date <- function(inputId="date1",
 
 }
 
-# 定义一个文件上传控件ui_file----
+# 4.1定义文件字段类型S4----
 #' Title
 #'
 #' @slot inputId character. 内码
