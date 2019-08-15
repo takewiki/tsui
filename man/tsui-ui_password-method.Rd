@@ -17,5 +17,5 @@
 定义shiny_input对ui_password的实现
 }
 \examples{
-shiny_input(x);
+tsui(x);
 }

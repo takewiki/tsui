@@ -1,4 +1,4 @@
-# 定义shiny_input Generic Func----
+# 0_定义tsui Generic Func----
 #' 定义通用的输入函数
 #'
 #' @param x 对象签名
@@ -12,7 +12,9 @@ setGeneric("tsui",
            signature = "x",
            function(x) standardGeneric("tsui"));
 
-# shiny_input for class ui_text----
+# 1 tsui在文本上的应用-----
+
+# 1.01 tsui for class ui_text----
 #' shiny_input用于ui_text的处理方法定义
 #'
 #' @param x ui_text.
@@ -30,7 +32,7 @@ setMethod("tsui",
                       value=x@value,
                       width = x@width)
                       });
-# 定义shiny_input在ui_password类上的实现-----
+# 1.02 定义tsui在ui_password上的实现-----
 #' 定义shiny_input对ui_password的实现
 #'
 #' @param x ui_password. 实例化对象ui_password
@@ -38,15 +40,38 @@ setMethod("tsui",
 #' @return 返回值
 #' @export
 #'
-#' @examples shiny_input(x);
+#' @examples tsui(x);
 setMethod("tsui",
           c("x" = "ui_password"),
           function(x){
-            passwordInput(inputId = x@inputId,
-                      label= x@label,
-                      value=x@value,
-                      width = x@width)
+             passwordInput(inputId = x@inputId,
+                           label= x@label,
+                           value=x@value,
+                           width = x@width)
           });
+# 定义tsui方法在input.numeric上的实现----
+#' 定义drawElement方法在input.numeric上的实现
+#'
+#' @param x input.numeric. 定义对象
+#'
+#' @return 返回值
+#' @include input.numeric.R
+#' @export
+#'
+#' @examples tsui();
+setMethod("tsui",
+          c("x" = "input.numeric"),
+          function(x){
+             numericInput(inputId = x@Id,
+                          label = x@label,
+                          value = x@value,
+                          min = x@min,
+                          max = x@max,
+                          step = x@step,
+                          width = x@width)
+          })
+
+
 
 
 
@@ -72,6 +97,31 @@ setMethod("tsui",
                         width = x@width)
 
                       });
+
+#' 定义drawElement方法在input.slider类的实现
+#'
+#' @param x input.slider. 输入对象实例
+#'
+#' @return 返回值
+#' @export
+#' @import shiny
+#' @include input.slider.R
+#'
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "input.slider"),
+          function(x){
+             sliderInput(inputId = x@Id,
+                         label = x@label,
+                         min = x@min,
+                         max = x@max,
+                         value = x@value,
+                         step = x@step,
+                         round = x@round,
+                         width = x@width)
+          })
+
 
 # shiny_input在ui_date上的方法实现----
 #' shiny_input for ui_date
@@ -118,7 +168,7 @@ setMethod("tsui",
 
 })
 
-#shiny_input在ui_file上进行方法实现----
+#tsui在ui_file上进行方法实现----
 #' 定义shiny_input在ui_file上的实现
 #'
 #' @param x ui_file.  ui_file实例对象
@@ -151,3 +201,180 @@ setMethod("tsui", c("x"="ui_file"), function(x) {
 
 
 })
+
+
+#' 用于生成下载按纽
+#'
+#' @param x input.button.download.
+#'
+#' @return 返回值
+#' @export
+#' @include input.button.download.R
+#' @import shiny
+#'
+#' @examples drawElement(input.button.download());
+setMethod("tsui",
+          c("x" = "input.button.download"),
+          function(x){
+             downloadButton(outputId = x@Id,label = x@label,class = x@css_class)
+          })
+
+
+# 定义tsui方法在output.dataTable类的实现----
+
+#' 定义tsui方法在output.dataTable类的实现
+#'
+#' @param x output.dataTable. 类output.dataTable实例对象
+#'
+#' @return 返回值
+#' @import shiny
+#' @include output.dataTable.R
+#' @export
+#'
+#' @examples drawElement(output.dataTable());
+setMethod("tsui",
+          c("x" = "output.dataTable"),
+          function(x){
+             dataTableOutput(outputId = x@Id)
+          })
+
+#' 将于处理相应的数据 
+#'
+#' @param x output.image.  output.image类的对象
+#'
+#' @return 返回值
+#' @include output.image.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "output.image"),
+          function(x){
+             imageOutput(outputId = x@Id,
+                         width = x@width,
+                         height = x@height,
+                         click = x@click,
+                         dblclick = x@dblclick,
+                         hover = x@hover,
+                         brush = x@brush,
+                         inline = x@inline)
+          })
+
+#' Title
+#'
+#' @param x output.plot.  output.plot类的对象
+#'
+#' @return 返回值
+#' @include output.plot.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "output.plot"),
+          function(x){
+             plotOutput(outputId = x@Id,
+                        width = x@width,
+                        height = x@height,
+                        click = x@click,
+                        dblclick = x@dblclick,
+                        hover = x@hover,
+                        brush = x@brush,
+                        inline = x@inline)
+          })
+
+
+# 定义drawElement方法在input.checkboxGroup上的实现----
+#' 定义drawElement方法在input.checkboxGroup上的实现
+#'
+#' @param x input.checkboxGroup. 实例
+#'
+#' @return 返回值
+#' @include input.checkboxGroup.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "input.checkboxGroup"),
+          function(x){
+             checkboxGroupInput(inputId = x@Id,
+                                label = x@label,
+                                choiceNames = x@choiceNames,
+                                choiceValues = x@choiceValues,
+                                selected = x@selected,
+                                inline = x@inline,
+                                width = x@width)
+          })
+
+
+
+# 定义drawElement方法在output.print上的实现----
+#' 定义drawElement方法在output.print
+#'
+#' @param x output.print. output.print实例
+#'
+#' @return 返回值
+#' @import shiny
+#' @include output.print.R
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "output.print"),
+          function(x){
+             verbatimTextOutput(outputId = x@Id,
+                                placeholder = x@placeholder)
+             
+          })
+
+# 定义drawElement方法在output.text上的实现----
+#' 定义drawElement方法在output.text上的实现
+#'
+#' @param x output.text.定义output.text的实例
+#'
+#' @return 返回值
+#' @include output.text.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "output.text"),
+          function(x){
+             textOutput(outputId = x@Id,inline = x@inline)
+             
+          })
+
+# 定义drawElement方法在input.dateRange上的实现----
+#' Title
+#'
+#' @param x input.dateRange.
+#'
+#' @return 返回值
+#' @include input.dateRange.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("tsui",
+          c("x" = "input.dateRange"),
+          function(x){
+             dateRangeInput(inputId = x@Id,
+                            label = x@label,
+                            start=x@start,
+                            end=x@end,
+                            min = x@min,
+                            max = x@max,
+                            format = x@format,
+                            startview = x@startview,
+                            weekstart = x@weekstart,
+                            language = x@language,
+                            separator = x@separator,
+                            width = x@width,
+                            autoclose = x@autoclose)
+             
+          })
+
+

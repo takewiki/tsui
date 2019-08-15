@@ -13,7 +13,8 @@
 #' @import shiny
 #' @export
 #'
-#' @examples ui_text("aaaa");
+#' @examples 
+#' ui_text()
 setClass("ui_text",
                       slot=c(inputId = "character",
                              label = "character",
@@ -37,7 +38,8 @@ setClass("ui_text",
 #' @return 返回值
 #' @export
 #'
-#' @examples ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%");
+#' @examples 
+#' ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%")
 ui_text <- function( inputId="txt1",
                      label="text1_caption",
                      value="",
