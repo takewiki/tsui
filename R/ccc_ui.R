@@ -49,7 +49,8 @@ setMethod("tsui",
                            value=x@value,
                            width = x@width)
           });
-# 定义tsui方法在input.numeric上的实现----
+# 2.定义数值的处理方法------
+# 2.1定义tsui方法在input.numeric上的实现----
 #' 定义drawElement方法在input.numeric上的实现
 #'
 #' @param x input.numeric. 定义对象
@@ -74,31 +75,8 @@ setMethod("tsui",
 
 
 
-
-# 定义shiny_input在ui_number_slider上的实现代码----
-#' 定义shiny_input在ui_number_slider上的实现代码
-#'
-#' @param x ui_number_slider. ui_numer_slider实例
-#'
-#' @return 返回值
-#' @import shiny
-#' @export
-#'
-#' @examples shiny_input(bb);
-setMethod("tsui",
-          c("x" = "ui_number_slider"),
-          function(x){
-            sliderInput(inputId = x@inputId,
-                        label = x@label,
-                        min=x@min,
-                        max=x@max,
-                        value=x@value,
-                        step=x@step,
-                        width = x@width)
-
-                      });
-
-#' 定义drawElement方法在input.slider类的实现
+# 2.2 定义tsui方法在input.slider类的实现------
+#' 2.2 定义tsui方法在input.slider类的实现
 #'
 #' @param x input.slider. 输入对象实例
 #'
@@ -108,7 +86,7 @@ setMethod("tsui",
 #' @include input.slider.R
 #'
 #'
-#' @examples drawElement();
+#' @examples tsui();
 setMethod("tsui",
           c("x" = "input.slider"),
           function(x){

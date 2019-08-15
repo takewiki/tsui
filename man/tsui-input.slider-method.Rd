@@ -3,7 +3,7 @@
 \docType{methods}
 \name{tsui,input.slider-method}
 \alias{tsui,input.slider-method}
-\title{定义drawElement方法在input.slider类的实现}
+\title{2.2 定义tsui方法在input.slider类的实现}
 \usage{
 \S4method{tsui}{input.slider}(x)
 }
@@ -14,8 +14,8 @@
 返回值
 }
 \description{
-定义drawElement方法在input.slider类的实现
+2.2 定义tsui方法在input.slider类的实现
 }
 \examples{
-drawElement();
+tsui();
 }

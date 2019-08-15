@@ -210,4 +210,216 @@ run_password_test <- function(id) {
   run_password(test_password,id)
 }
 
+# 2. 处理数值字段--------
+# 2.1 处理小数类型的字段-----
+
+#' 处理小数型字段处理
+#'
+#' @param id ID
+#' @param label  名称
+#' @param is.test 是否测试
+#' @param value 默认值
+#' @param min 最小值
+#' @param max 最大值
+#' @param step 步长
+#' @param width 宽度
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' library(shiny);
+#' library(tsui);
+#' test_tsui(mdl_numeric,id='num1','小数',run_numeric_test);
+mdl_numeric <- function(id, label = "小数",is.test=FALSE,value=10,min=0,max=30,step=0.5,width="100%") {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.numeric(Id = ns('mdl_numeric'),label = label,value = value,min = min,max = max,step = step,width = width))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.numeric(Id = ns('mdl_numeric'),label = label,value = value,min = min,max = max,step = step,width = width))
+    ,
+      verbatimTextOutput(ns("test_numeric"))
+    )
+  }
+  
+}
+
+
+#' 定义函数的处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_numeric();
+proc_numeric <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_numeric
+  #output$test_numeric
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 定义相应的处理函数
+#'
+#' @param proc_func 逻辑函数
+#' @param id ID
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_numeric();
+run_numeric <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+
+#' 定义numeric测试逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_numeric();
+test_numeric <- function(input, output, session) {
+  
+  output$test_numeric <- renderText({
+    input$mdl_numeric
+  })
+  
+}
+
+#' 处理相关的演示
+#'
+#' @param id id
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_numeric_test();
+run_numeric_test <- function(id) {
+  run_numeric(test_numeric,id)
+}
+
+# 2.2 处理整数类型的字段------
+#' 处理整数控件
+#'
+#' @param id  id
+#' @param label 标签
+#' @param min 最小值
+#' @param max 最大值
+#' @param value 默认值
+#' @param step 步长1
+#' @param round 小数位
+#' @param width 宽度
+#' @param is.test 是否测试
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' library(shiny);
+#' library(tsui);
+#' test_tsui(mdl_integer,id='int1','整数',run_integer_test);
+mdl_integer <- function(id,label='整数',is.test=FALSE,min=0,max=10,value=3,step=1,round=0L,width='100%') {
+
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.slider(Id = ns('mdl_integer'),label = label,min = min,max = max,value = value,step = step,round = round,width = width))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.slider(Id = ns('mdl_integer'),label = label,min = min,max = max,value = value,step = step,round = round,width = width))
+      ,
+      verbatimTextOutput(ns("test_integer"))
+    )
+  }
+  
+}
+
+#' 处理整数的处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_integer();
+proc_integer <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_integer
+  #output$test_integer
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 处理整数的函数
+#'
+#' @param proc_func 函数
+#' @param id id
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_integer();
+run_integer <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+#' 定义示例的整数处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_integer();
+test_integer <- function(input, output, session) {
+  
+  output$test_integer <- renderText({
+    input$mdl_integer
+  })
+  
+}
+
+
+#' 处理整数演示调用函数
+#'
+#' @param id id
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_integer_test();
+run_integer_test <- function(id) {
+  run_numeric(test_integer,id)
+}
 
