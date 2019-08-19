@@ -180,6 +180,31 @@ setMethod("tsui", c("x"="ui_file"), function(x) {
 
 })
 
+# tsui for input.file class -----
+#' 定义tsui方法在input.file上的实现
+#'
+#' @param x input.file.  input.file类
+#'
+#' @return 返回值
+#' @import shiny
+#' @include input.file.R
+#' @export
+#'
+#' @examples  tsui(input.file());
+setMethod("tsui",
+          c("x" = "input.file"),
+          function(x){
+             fileInput(inputId = x@Id,
+                       label =x@label,
+                       multiple = x@multiple,
+                       accept = x@accept,
+                       width = x@width,
+                       buttonLabel = x@buttonLabel,
+                       placeholder = x@placeholder
+             )
+          })
+
+
 
 #' 用于生成下载按纽
 #'
@@ -325,17 +350,49 @@ setMethod("tsui",
              
           })
 
-# 定义drawElement方法在input.dateRange上的实现----
-#' Title
+
+# 定义tsui方法在input.date上的实现----
+#' 定义tsui方法在input.date上的实现
 #'
-#' @param x input.dateRange.
+#' @param x input.date. 实例化对象
+#'
+#' @return 返回值
+#' @import shiny
+#' @include input.date.R
+#' @export
+#'
+#' @examples tsui();
+setMethod("tsui",
+          c("x" = "input.date"),
+          function(x){
+             dateInput(inputId = x@Id,
+                       label = x@label,
+                       value = x@value,
+                       min = x@min,
+                       max = x@max,
+                       format = x@format,
+                       startview = x@startview,
+                       weekstart = x@weekstart,
+                       language = x@language,
+                       width = x@width,
+                       autoclose = x@autoclose)
+             
+          })
+
+
+
+
+# 定义tsui方法在input.dateRange上的实现----
+#' 定义处理日期范围的控制
+#'
+#' @param x input.dateRange. 日期范围
 #'
 #' @return 返回值
 #' @include input.dateRange.R
 #' @import shiny
 #' @export
 #'
-#' @examples drawElement();
+#' @examples tsui();
 setMethod("tsui",
           c("x" = "input.dateRange"),
           function(x){
@@ -353,6 +410,24 @@ setMethod("tsui",
                             width = x@width,
                             autoclose = x@autoclose)
              
+          })
+
+
+# 定义tsui在input.button.download类的上方法----
+#' Title
+#'
+#' @param x input.button.download.
+#'
+#' @return 返回值
+#' @export
+#' @include input.button.download.R
+#' @import shiny
+#'
+#' @examples tsui(input.button.download());
+setMethod("tsui",
+          c("x" = "input.button.download"),
+          function(x){
+             downloadButton(outputId = x@Id,label = x@label,class = x@css_class)
           })
 
 

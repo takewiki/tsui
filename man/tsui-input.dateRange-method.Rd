@@ -3,19 +3,19 @@
 \docType{methods}
 \name{tsui,input.dateRange-method}
 \alias{tsui,input.dateRange-method}
-\title{Title}
+\title{定义处理日期范围的控制}
 \usage{
 \S4method{tsui}{input.dateRange}(x)
 }
 \arguments{
-\item{x}{input.dateRange.}
+\item{x}{input.dateRange. 日期范围}
 }
 \value{
 返回值
 }
 \description{
-Title
+定义处理日期范围的控制
 }
 \examples{
-drawElement();
+tsui();
 }

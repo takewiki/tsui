@@ -423,3 +423,439 @@ run_integer_test <- function(id) {
   run_numeric(test_integer,id)
 }
 
+
+
+#3. 处理日期字段------
+
+#3.1 单个日期字段-----
+#' 处理日期字段
+#'
+#' @param id  id
+#' @param label  标签
+#' @param is.test 是否测试
+#' @param value  默认值
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_date();
+#' library(tsui);
+#' library(shiny);
+#' test_tsui(mdl_date,id='date1','日期',run_date_test);
+
+mdl_date <- function(id,label='日期',is.test=FALSE,value=Sys.Date()) {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+    tsui(input.date(Id = ns('mdl_date'),label = label,value = value))  
+    )
+    
+  }else{
+    tagList(
+      tsui(input.date(Id = ns('mdl_date'),label = label,value = value)) 
+      ,
+      verbatimTextOutput(ns("test_date"))
+    )
+  }
+  
+}
+
+#' 处理日期的逻辑框架
+#'
+#' @param input   输入
+#' @param output  输出
+#' @param session  会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_date();
+proc_date <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_date
+  #output$test_date
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 处理日期字段
+#'
+#' @param proc_func  日期处理逻辑
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_date();
+run_date <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+#' 处理日期字段
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_date();
+test_date <- function(input, output, session) {
+  
+  output$test_date <- renderText({
+    as.character(input$mdl_date)
+  })
+  
+}
+
+#' 日期字段测试
+#'
+#' @param id  内码 
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_date_test();
+run_date_test <- function(id) {
+  run_date(test_date,id)
+}
+
+#3.2 两个日期字段------
+
+#' 处理日期范围字段
+#'
+#' @param id 内码
+#' @param label 标签
+#' @param is.test 是否测试
+#' @param startDate 开始日期
+#' @param endDate  结束日期
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_dateRange();
+mdl_dateRange <- function(id,
+                          label='日期范围',
+                          is.test=FALSE,
+                          startDate=Sys.Date(),
+                          endDate=Sys.Date()+14) {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.dateRange(Id = ns('mdl_dateRange'),label = label,start = startDate,end = endDate))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.dateRange(Id = ns('mdl_dateRange'),label = label,start = startDate,end = endDate))
+      ,
+      verbatimTextOutput(ns("test_dateRange"))
+    )
+  }
+  
+}
+#' 处理日期的逻辑框架
+#'
+#' @param input   输入
+#' @param output  输出
+#' @param session  会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_dateRange();
+proc_dateRange <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_dateRange
+  #output$test_dateRange
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 处理日期字段
+#'
+#' @param proc_func  日期处理逻辑
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_dateRange();
+run_dateRange <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+#' 处理日期字段
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_dateRange();
+test_dateRange <- function(input, output, session) {
+  
+  output$test_dateRange <- renderText({
+    res <-as.character(input$mdl_dateRange)
+    txt <- paste('日期从',res[1],'到',res[2],sep = " ")
+  })
+  
+}
+
+#' 日期字段测试
+#'
+#' @param id  内码 
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_date_test();
+run_dateRange_test <- function(id) {
+  run_dateRange(test_dateRange,id)
+}
+
+
+# 4.处理文件-----
+# 4.1 处理一个文件----
+#' 处理单一文件控制
+#'
+#' @param id  内码
+#' @param label 标签
+#' @param is.test 是否测试
+#' @param fileType 文件后缀类型xlsx
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_file();
+mdl_file <- function(id,label='单文件选择器：',is.test=FALSE,fileType='.xlsx') {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.file(Id = ns("mdl_file"),
+                      label = label,
+                      width = '100%',
+                      multiple = FALSE,
+                      accept = fileType,
+                      buttonLabel = '请选择一个文件...'))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.file(Id = ns("mdl_file"),
+                      label = label,
+                      width = '100%',
+                      multiple = FALSE,
+                      accept = fileType,
+                      buttonLabel = '请选择一个文件...'))
+      ,
+      verbatimTextOutput(ns("test_file"))
+    )
+  }  
+  
+}
+
+#' 处理单个文件逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_file();
+proc_file <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_file
+  #output$test_file
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 处理文件执行逻辑
+#'
+#' @param proc_func 逻辑函数 
+#' @param id 内码 
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_file();
+run_file <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+
+#' 测试文件
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_file();
+test_file <- function(input, output, session) {
+  
+  output$test_file <- renderText({
+    input$mdl_file$datapath;
+  })
+  
+}
+
+#' 建立一个测试示例
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples 
+#' run_file_test();
+run_file_test <- function(id) {
+  run_file(test_file,id)
+}
+
+
+# 4.2 处理多个文件-----
+#' 多个文件上传处理器
+#'
+#' @param id 内码
+#' @param label 标签
+#' @param is.test 是否测试
+#' @param fileType 文件类型
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_files();
+mdl_files <- function(id,label='多文件选择器：',is.test=FALSE,fileType='.xlsx') {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.file(Id = ns("mdl_files"),
+                      label = label,
+                      width = '100%',
+                      multiple = TRUE,
+                      accept = fileType,
+                      buttonLabel = '请选择多个文件...'))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.file(Id = ns("mdl_files"),
+                      label = label,
+                      width = '100%',
+                      multiple = TRUE,
+                      accept = fileType,
+                      buttonLabel = '请选择多个文件...'))
+      ,
+      verbatimTextOutput(ns("test_files"))
+    )
+  }    
+  
+}
+
+#' 撰写逻辑处理通用框架
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_files();
+proc_files <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_files
+  #output$test_files
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 运行模块调用逻辑
+#'
+#' @param proc_func 处理逻辑 
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_files();
+run_files <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+
+#' 测试多个文件的处理
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_files();
+test_files <- function(input, output, session) {
+  
+  output$test_files <- renderText({
+    # input$mdl_files是一个数据框，这样可以理解相应的数据结构及方法处理
+    #文件真实存放路径
+    files <-input$mdl_files$datapath;
+    #文件名
+    names <-input$mdl_files$name;
+    #文件大小
+    sizes <- input$mdl_files$size;
+    paste(names,sizes,files,sep=" ",collapse = '\n')
+    
+  
+  })
+  
+}
+
+#' 运行测试数据
+#'
+#' @param id  内码 
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_files_test();
+run_files_test <- function(id) {
+  run_files(test_files,id)
+}
+
