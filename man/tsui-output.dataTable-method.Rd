@@ -17,5 +17,5 @@
 定义tsui方法在output.dataTable类的实现
 }
 \examples{
-drawElement(output.dataTable());
+tsui(output.dataTable());
 }

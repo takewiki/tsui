@@ -859,3 +859,107 @@ run_files_test <- function(id) {
   run_files(test_files,id)
 }
 
+
+#5.处理按纽-----
+#5.1 处理点击按纽----
+#' 处理点击按纽
+#'
+#' @param id 内码
+#' @param label 标签
+#' @param is.test 是否测试
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_action_button();
+mdl_action_button <- function(id,label='点击按纽',is.test=FALSE) {
+  ns <- NS(id)
+  if (is.test == FALSE){
+    tagList(
+      tsui(input.button.action(Id = ns('mdl_action_buttion'),label = label))
+    )
+    
+  }else{
+    tagList(
+      tsui(input.button.action(Id = ns('mdl_action_button'),label = label))
+      ,
+      verbatimTextOutput(ns("test_action_button"))
+    )
+  }
+  
+}
+
+
+#' 处理点击按纽
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_action_button();
+proc_action_button <- function(input, output, session) {
+  
+  # code here
+  #input$mdl_action_button
+  #output$test_action_button
+  res <- TRUE;
+  return(res);
+  
+}
+
+#' 处理按纽事件
+#'
+#' @param proc_func 逻辑函数
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_action_button(); 
+run_action_button <-function(proc_func,id){
+  callModule(proc_func, id)
+}
+
+
+#' 处理按纽
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' test_action_button(); 
+test_action_button <- function(input, output, session) {
+  
+  output$test_action_button <- renderText({
+   
+    as.character(input$mdl_action_button)
+    
+    
+  })
+  
+}
+
+#' 处理相应的按纽处理事项
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_action_button_test();
+run_action_button_test <- function(id) {
+  run_action_button(test_action_button,id)
+}
+
+

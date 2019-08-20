@@ -234,13 +234,14 @@ setMethod("tsui",
 #' @include output.dataTable.R
 #' @export
 #'
-#' @examples drawElement(output.dataTable());
+#' @examples tsui(output.dataTable());
 setMethod("tsui",
           c("x" = "output.dataTable"),
           function(x){
              dataTableOutput(outputId = x@Id)
           })
 
+# 将于处理相应的数据 ---------
 #' 将于处理相应的数据 
 #'
 #' @param x output.image.  output.image类的对象
@@ -428,6 +429,25 @@ setMethod("tsui",
           c("x" = "input.button.download"),
           function(x){
              downloadButton(outputId = x@Id,label = x@label,class = x@css_class)
+          })
+
+
+
+# tsui用于input.button.acton控件上面-----
+#' tsui用于input.button.acton控制上面
+#'
+#' @param x input.button.action. 实例化
+#'
+#' @return 返回值
+#' @include input.button.action.R
+#' @export
+#'
+#' @examples
+#' tsui();
+setMethod("tsui",
+          c("x" = "input.button.action"),
+          function(x){
+                actionButton(inputId = x@Id,label = x@label,width = x@width)
           })
 
 
