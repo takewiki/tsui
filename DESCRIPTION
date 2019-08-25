@@ -53,6 +53,7 @@ Collate:
     'mdl.print.R'
     'mdl_baseOutput.R'
     'mdl_baseUI.R'
+    'page_fluid_default.R'
     'process.button.download.R'
     'process.dataTable.preview.R'
     'process.image.R'
