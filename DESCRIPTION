@@ -59,6 +59,7 @@ Collate:
     'page_fluid_3Pin.R'
     'page_fluid_3T.R'
     'page_fluid_4.R'
+    'page_fluid_5Pin.R'
     'page_fluid_default.R'
     'process.button.download.R'
     'process.dataTable.preview.R'
