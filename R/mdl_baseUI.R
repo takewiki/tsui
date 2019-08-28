@@ -111,6 +111,43 @@ run_text_test <- function(id) {
   run_text(test_text,id)
 }
 
+
+#' 处理文件数据逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#'
+#' @examples
+#' proc_text_var();
+proc_text_var <- function(input, output, session) {
+  
+  # code here
+  res <- reactive(input$mdl_text)
+  return(res);
+  
+}
+
+
+
+
+#' 处理数据接口
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_text()
+var_text <- function(id) {
+ res <- callModule(proc_text_var,id);
+ return(res);
+  
+}
+
 #1.02 处理密码类型的字段------
 #' 处理密码控件
 #'
@@ -163,6 +200,25 @@ proc_password <- function(input, output, session) {
   
 }
 
+
+#' 处理文本的变量处理方式
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_password_var();
+proc_password_var <- function(input, output, session) {
+  
+  res <- reactive(input$mdl_password)
+  return(res);
+  
+}
+
 #' 定义处理密码的逻辑函数
 #'
 #' @param proc_func 逻辑函数名
@@ -208,6 +264,20 @@ test_password <- function(input, output, session) {
 #' run_password_test();
 run_password_test <- function(id) {
   run_password(test_password,id)
+}
+
+#' 处理密码变量信息
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_password(); 
+var_password <- function(id){
+  res <-callModule(proc_password_var,id)
+  return(res)
 }
 
 # 2. 处理数值字段--------
@@ -270,6 +340,25 @@ proc_numeric <- function(input, output, session) {
   
 }
 
+#' 获取变量的处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_numeric_var();
+proc_numeric_var <- function(input, output, session) {
+
+  res <- reactive(input$mdl_numeric)
+  return(res);
+  
+}
+
+
 #' 定义相应的处理函数
 #'
 #' @param proc_func 逻辑函数
@@ -315,6 +404,23 @@ test_numeric <- function(input, output, session) {
 #' run_numeric_test();
 run_numeric_test <- function(id) {
   run_numeric(test_numeric,id)
+}
+
+
+#' 处理数值变量数据
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_numeric();
+var_numeric <- function(id) {
+  
+  res <- callModule(proc_numeric_var,id)
+  return(res);
+  
 }
 
 # 2.2 处理整数类型的字段------
@@ -376,6 +482,24 @@ proc_integer <- function(input, output, session) {
   
 }
 
+#' 处理整数的逻辑函数
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_integer_var();
+proc_integer_var <- function(input, output, session) {
+  
+   res <- reactive(input$mdl_integer)
+  return(res);
+  
+}
+
 #' 处理整数的函数
 #'
 #' @param proc_func 函数
@@ -424,6 +548,20 @@ run_integer_test <- function(id) {
 }
 
 
+#' 处理整数的逻辑变更
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_integer();
+var_integer <- function(id) {
+  res<- callModule(proc_integer_var,id);
+  return(res)
+  
+}
 
 #3. 处理日期字段------
 
@@ -482,6 +620,27 @@ proc_date <- function(input, output, session) {
   
 }
 
+#' 处理日期变量的处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session  会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_date_var();
+proc_date_var <- function(input, output, session) {
+  
+  # code here
+  #
+  #output$test_date
+  res <-reactive(input$mdl_date)   
+  return(res);
+  
+}
+
 #' 处理日期字段
 #'
 #' @param proc_func  日期处理逻辑
@@ -526,6 +685,23 @@ test_date <- function(input, output, session) {
 #' run_date_test();
 run_date_test <- function(id) {
   run_date(test_date,id)
+}
+
+
+
+#' 日期
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_date();
+var_date <- function(id) {
+  res <- callModule(proc_date_var,id)
+  return(res);
+  
 }
 
 #3.2 两个日期字段------
