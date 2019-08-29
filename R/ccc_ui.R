@@ -451,3 +451,35 @@ setMethod("tsui",
           })
 
 
+
+# 定义tsui方法在input.text上的实现----
+#' 定义drawElement方法在input.text上的实现
+#'
+#' @param x input.text. input.text类
+#'
+#' @return 返回值
+#' @include input.text.R
+#' @import shiny
+#' @export
+#'
+#' @examples tsui();
+setMethod("tsui",
+          c("x" = "input.text"),
+          function(x){
+             if (x@isPassword == FALSE){
+                textInput(inputId = x@Id,
+                          label = x@label,
+                          value = x@value,
+                          width = x@width,
+                          placeholder = x@placeholder)
+                
+             }else{
+                passwordInput(inputId = x@Id,
+                              label = x@label,
+                              value = x@value,
+                              width = x@width,
+                              placeholder = x@placeholder)
+                
+             }
+             
+          })
