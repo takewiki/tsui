@@ -1053,12 +1053,12 @@ mdl_action_button <- function(id,label='点击按纽',is.test=FALSE) {
   ns <- NS(id)
   if (is.test == FALSE){
     tagList(
-      tsui(input.button.action(Id = ns('mdl_action_buttion'),label = label))
+      actionButton(inputId = ns('mdl_action_button'),label = label)
     )
     
   }else{
     tagList(
-      tsui(input.button.action(Id = ns('mdl_action_button'),label = label))
+      actionButton(inputId = ns('mdl_action_button'),label = label)
       ,
       verbatimTextOutput(ns("test_action_button"))
     )
@@ -1082,10 +1082,29 @@ proc_action_button <- function(input, output, session) {
   
   # code here
   #input$mdl_action_button
-  #output$test_action_button
-  res <- TRUE;
-  return(res);
+  output$test_action_button <- renderPrint({
+    as.integer(input$mdl_action_button)
+  })
   
+  
+}
+
+#' 处理按纽处理逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_action_button_var();
+proc_action_button_var <- function(input,output,session){
+  res <- reactive(
+    as.integer(input$mdl_action_button)
+  );
+  return(res);
 }
 
 #' 处理按纽事件
@@ -1100,6 +1119,20 @@ proc_action_button <- function(input, output, session) {
 #' run_action_button(); 
 run_action_button <-function(proc_func,id){
   callModule(proc_func, id)
+}
+
+#' 处理按纽控制的业务逻辑
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_action_button();
+var_action_button <- function(id){
+  res <-callModule(proc_action_button_var,id)
+  return(res);
 }
 
 

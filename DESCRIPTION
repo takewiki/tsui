@@ -54,6 +54,7 @@ Collate:
     'mdl_advancedUI.R'
     'mdl_baseOutput.R'
     'mdl_baseUI.R'
+    'mdl_login.R'
     'mdl_rdbms.R'
     'page_dashboard_default.R'
     'page_fluid_1R2C.R'
