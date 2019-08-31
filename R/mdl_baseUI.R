@@ -563,6 +563,55 @@ var_integer <- function(id) {
   
 }
 
+
+#2.3 处理逻辑------
+#' 处理逻辑值
+#'
+#' @param id  内码
+#' @param label 标签
+#' @param value 默认值FALSE
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_logical();
+mdl_logical <- function(id,label,value=FALSE){
+  ns <- NS(id);
+  tagList(
+    checkboxInput(inputId = ns('mdl_logical'),label = label,value = value)
+  )
+}
+
+#' 处理逻辑数据
+#'
+#' @param input 输入 
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_logical();
+proc_logical <- function(input,output,session){
+  res <- reactive(input$mdl_logical)
+  return(res);
+}
+
+#' 处理逻辑的基本函数
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_logical();
+var_logical <- function(id){
+  res <- callModule(proc_logical,id);
+  return(res);
+}
 #3. 处理日期字段------
 
 #3.1 单个日期字段-----

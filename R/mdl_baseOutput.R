@@ -158,6 +158,65 @@ run_dataTable_test <-function(id){
   callModule(test_dataTable, id)
 }
 
+#处理print; 
+
+#' 处理打印显示控件的内容
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' mdl_print();
+mdl_print <- function(id){
+  ns <- NS(id);
+  tagList(
+    verbatimTextOutput(ns('mdl_print'))
+  )
+}
+
+#' 使用print的处理逻辑
+#' #这样的处理逻辑有一个问题，当数据变化时函数并不知晓。
+#'
+#' @param input  输入
+#' @param output 输出
+#' @param session 会话
+#' @param data 数据
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_print();
+proc_print <- function(input,output,session,data){
+  output$mdl_print <- renderPrint({
+    print(data);
+  })
+}
+
+#' 运行打印函数
+#'
+#' @param id 内码
+#' @param data 数据
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' data <- var_text('aa');
+#'
+#' observe({
+#'  data();
+#'  run_print('res',data());  
+#' })
+run_print <- function(id,data){
+
+    callModule(proc_print,id,data);
+
+  
+ 
+}
 
 
 
