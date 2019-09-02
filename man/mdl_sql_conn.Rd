@@ -4,12 +4,24 @@
 \alias{mdl_sql_conn}
 \title{撰写数据库连接组件}
 \usage{
-mdl_sql_conn(id, label = "SQL Server配置信息")
+mdl_sql_conn(id, label = "SQL Server配置信息",
+  ip = "115.159.201.178", port = "1433", user_name = "sa",
+  password = "88888888", db_name = "demo")
 }
 \arguments{
 \item{id}{内码}
 
 \item{label}{标签}
+
+\item{ip}{地址}
+
+\item{port}{端口}
+
+\item{user_name}{用户名}
+
+\item{password}{密码}
+
+\item{db_name}{数据库名称}
 }
 \value{
 返回值

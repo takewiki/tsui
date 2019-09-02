@@ -4,10 +4,12 @@
 \alias{var_action_button}
 \title{处理按纽控制的业务逻辑}
 \usage{
-var_action_button(id)
+var_action_button(id, init_null = FALSE)
 }
 \arguments{
 \item{id}{内码}
+
+\item{init_null}{初始化值是否为null}
 }
 \value{
 返回值

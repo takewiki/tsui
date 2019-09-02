@@ -919,6 +919,23 @@ proc_file <- function(input, output, session) {
   
 }
 
+#' 处理文件变量逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_file_var();
+proc_file_var <- function(input, output, session) {
+  
+  res <- reactive(input$mdl_file$datapath)
+  return(res);
+  
+}
 #' 处理文件执行逻辑
 #'
 #' @param proc_func 逻辑函数 
@@ -931,6 +948,20 @@ proc_file <- function(input, output, session) {
 #' run_file();
 run_file <-function(proc_func,id){
   callModule(proc_func, id)
+}
+
+#' 处理文件的结果逻辑
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_file();
+var_file <- function(id){
+  res <- callModule(proc_file_var,id);
+  return(res);
 }
 
 
@@ -1143,16 +1174,20 @@ proc_action_button <- function(input, output, session) {
 #' @param input 输入
 #' @param output 输出
 #' @param session 会话
+#' @param init_null 初始化值是事为null
 #'
 #' @return 返回值
 #' @export
 #'
 #' @examples
 #' proc_action_button_var();
-proc_action_button_var <- function(input,output,session){
+proc_action_button_var <- function(input,output,session,init_null=FALSE){
   res <- reactive(
     as.integer(input$mdl_action_button)
   );
+  if (!init_null){
+    res <- NULL
+  }
   return(res);
 }
 
@@ -1173,14 +1208,15 @@ run_action_button <-function(proc_func,id){
 #' 处理按纽控制的业务逻辑
 #'
 #' @param id 内码
+#' @param init_null 初始化值是否为null
 #'
 #' @return 返回值
 #' @export
 #'
 #' @examples
 #' var_action_button();
-var_action_button <- function(id){
-  res <-callModule(proc_action_button_var,id)
+var_action_button <- function(id,init_null=FALSE){
+  res <-callModule(proc_action_button_var,id,init_null=init_null)
   return(res);
 }
 

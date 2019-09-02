@@ -4,7 +4,7 @@
 \alias{proc_action_button_var}
 \title{处理按纽处理逻辑}
 \usage{
-proc_action_button_var(input, output, session)
+proc_action_button_var(input, output, session, init_null = FALSE)
 }
 \arguments{
 \item{input}{输入}
@@ -12,6 +12,8 @@ proc_action_button_var(input, output, session)
 \item{output}{输出}
 
 \item{session}{会话}
+
+\item{init_null}{初始化值是事为null}
 }
 \value{
 返回值

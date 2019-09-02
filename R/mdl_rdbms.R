@@ -2,6 +2,11 @@
 #'
 #' @param id 内码 
 #' @param label 标签
+#' @param ip 地址
+#' @param port 端口
+#' @param user_name 用户名 
+#' @param password 密码
+#' @param db_name 数据库名称
 #'
 #' @return 返回值
 #' @export
@@ -49,21 +54,27 @@
 #' 
 #' # Run the application 
 #' shinyApp(ui = ui, server = server)
-mdl_sql_conn <- function(id, label = "SQL Server配置信息"){
+mdl_sql_conn <- function(id, label = "SQL Server配置信息",
+                         ip='115.159.201.178',
+                         port='1433',
+                         user_name='sa',
+                         password='88888888',
+                         db_name='demo'
+                         ){
    ns <- NS(id)
    tagList(
       h3(label),
       br(),
       fluidRow(
-         tsui(ui_text(inputId = ns('ip'),label = 'IP地址:',value = '115.159.201.178')),
+         tsui(ui_text(inputId = ns('ip'),label = 'IP地址:',value = ip,width='90%')),
          #br(),
-         tsui(ui_text(inputId = ns('port'),label = '端口号:',value = '1433')),
+         tsui(ui_text(inputId = ns('port'),label = '端口号:',value = port,width='90%')),
          #br(),
-         tsui(ui_text(inputId = ns('user_name'),label = '用户名:',value = 'sa')),
+         tsui(ui_text(inputId = ns('user_name'),label = '用户名:',value = user_name,width='90%')),
          #br(),
-         tsui(ui_password(inputId = ns('password'),label = '密码:',value = 'Hoolilay889@')),
+         tsui(ui_password(inputId = ns('password'),label = '密码:',value = password,width='90%')),
          # br(),
-         tsui(ui_text(inputId = ns('db_name'),label = '数据库名称:',value = 'JH_2018B'))
+         tsui(ui_text(inputId = ns('db_name'),label = '数据库名称:',value = db_name,width='90%'))
       ),
       fluidRow(
       
