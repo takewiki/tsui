@@ -1058,6 +1058,23 @@ proc_files <- function(input, output, session) {
   return(res);
   
 }
+#' 批量处理多个文件的逻辑
+#'
+#' @param input 输入
+#' @param output 输出
+#' @param session 会话
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' proc_files_var();
+proc_files_var <- function(input, output, session) {
+  
+  res <- reactive(input$mdl_files$datapath)
+  return(res);
+  
+}
 
 #' 运行模块调用逻辑
 #'
@@ -1073,6 +1090,19 @@ run_files <-function(proc_func,id){
   callModule(proc_func, id)
 }
 
+#' 批量处理多个文件的逻辑
+#'
+#' @param id 内码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' var_files();
+var_files <-function(id){
+ res <- callModule(proc_files_var, id);
+ return(res);
+}
 
 #' 测试多个文件的处理
 #'
