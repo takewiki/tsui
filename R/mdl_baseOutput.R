@@ -127,6 +127,20 @@ run_dataTable <-function(proc_func,id,data=iris){
   callModule(proc_func, id,data=data)
 }
 
+#' 处理改进版的处理函数
+#'
+#' @param id 内码
+#' @param data 数据
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' run_dataTable2();
+run_dataTable2 <-function(id,data=iris){
+  callModule(proc_dataTable, id,data=data)
+}
+
 
 #' 处理测试数据集
 #'
