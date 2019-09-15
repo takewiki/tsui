@@ -22,7 +22,7 @@ mdl_ListChoose1 <- function(id,label='单项选择题',
     radioButtons(inputId = ns('mdl_ListChoose1'),label = label,
                        choiceNames=choiceNames,
                        choiceValues = choiceValues,
-                       sselected = selected
+                       selected = selected
     )
   )
 }
@@ -114,4 +114,46 @@ proc_ListChooseN <- function(input,output,session){
 var_ListChooseN <- function(id){
   res <- callModule(proc_ListChooseN,id)
   return(res);
+}
+
+
+#' 使用通知功用
+#'
+#' @return 返回值
+#' @import shinyalert
+#' @export
+#'
+#' @examples
+#' use_pop();
+use_pop <- function() {
+  useShinyalert()
+  
+}
+
+#' 弹出通知信息
+#'
+#' @param msg 信息内容
+#'
+#' @return 返回值
+#' @import shinyalert
+#' @export
+#'
+#' @examples
+#' pop_notice();
+pop_notice <- function(msg){
+  shinyalert("友情提示!", msg, type = "info")
+}
+
+#' 弹出错误
+#'
+#' @param msg 信息内容
+#'
+#' @return 返回值
+#' @import shinyalert
+#' @export
+#'
+#' @examples
+#' pop_error();
+pop_error <- function(msg){
+  shinyalert("错误提示!", msg, type = "error")
 }
