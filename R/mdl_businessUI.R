@@ -14,13 +14,15 @@
 mdl_ListChoose1 <- function(id,label='单项选择题',
                             choiceNames=list(icon("calendar"), icon("bed"),
                                              icon("cog"), icon("bug")),
-                            choiceValues=list("calendar", "bed", "cog", "bug")
+                            choiceValues=list("calendar", "bed", "cog", "bug"),
+                            selected='bed'
 ){
   ns <-NS(id);
   tagList(
     radioButtons(inputId = ns('mdl_ListChoose1'),label = label,
                        choiceNames=choiceNames,
-                       choiceValues = choiceValues
+                       choiceValues = choiceValues,
+                       sselected = selected
     )
   )
 }
@@ -71,13 +73,15 @@ var_ListChoose1 <- function(id){
 mdl_ListChooseN <- function(id,label='多项选择题',
                             choiceNames=list(icon("calendar"), icon("bed"),
                                              icon("cog"), icon("bug")),
-                            choiceValues=list("calendar", "bed", "cog", "bug")
+                            choiceValues=list("calendar", "bed", "cog", "bug"),
+                            selected='bed'
                            ){
   ns <-NS(id);
   tagList(
     checkboxGroupInput(inputId = ns('mdl_ListChooseN'),label = label,
                        choiceNames=choiceNames,
-                       choiceValues = choiceValues
+                       choiceValues = choiceValues,
+                       selected=selected
                        )
   )
 }

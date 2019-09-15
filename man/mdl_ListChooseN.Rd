@@ -6,7 +6,8 @@
 \usage{
 mdl_ListChooseN(id, label = "多项选择题",
   choiceNames = list(icon("calendar"), icon("bed"), icon("cog"),
-  icon("bug")), choiceValues = list("calendar", "bed", "cog", "bug"))
+  icon("bug")), choiceValues = list("calendar", "bed", "cog", "bug"),
+  selected = "bed")
 }
 \arguments{
 \item{id}{内码}
