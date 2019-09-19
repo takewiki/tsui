@@ -804,9 +804,24 @@ proc_dateRange <- function(input, output, session) {
   # code here
   #input$mdl_dateRange
   #output$test_dateRange
-  res <- TRUE;
+  res <- reactive(input$mdl_dateRange)
   return(res);
   
+}
+
+#' 服务器日期范围控件调用逻辑
+#'
+#' @param id 内码
+#'
+#' @return 返回列表字段
+#' @export
+#'
+#' @examples
+#' var_dateRange();
+var_dateRange <- function(id){
+  res <- callModule(proc_dateRange,id)
+  # res <- list(startDate = res[1],endDate=res[2])
+  return(res)
 }
 
 #' 处理日期字段
