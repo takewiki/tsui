@@ -57,6 +57,7 @@ Collate:
     'mdl_login.R'
     'mdl_ns.R'
     'mdl_rdbms.R'
+    'module_template.R'
     'page_dashboard_default.R'
     'page_fluid_1R2C.R'
     'page_fluid_2R1C.R'
