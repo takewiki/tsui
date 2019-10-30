@@ -65,6 +65,23 @@ run_download_button <-function(proc_func,id,data=iris,filename='下载文件.xls
   callModule(proc_func, id,data=data,filename=filename,func=func)
 }
 
+
+#'  处理下载文件
+#'
+#' @param id 内码
+#' @param data 数据
+#' @param filename 文件名
+#'
+#' @return 返回值
+#' @import openxlsx
+#' @export
+#'
+#' @examples
+#' run_download_xlsx();
+run_download_xlsx <- function(id,data=iris,filename='下载文件.xlsx'){
+  run_download_button(proc_download_button,id,data,filename,write.xlsx)
+}
+
 #2.处理data.frame显示----
 #2.1 mdl_dataTable-------
 #' 处理dataTable数据
