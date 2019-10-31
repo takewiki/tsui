@@ -46,7 +46,6 @@ Collate:
     'drawElement_depreciated.R'
     'format.image.R'
     'getArgList.R'
-    'global.R'
     'mdl.button.download.R'
     'mdl.dataTable.preview.R'
     'mdl.image.R'
