@@ -1,7 +1,7 @@
 Package: tsui
 Type: Package
 Title: user interface elements from shiny,H5,css,js in takewiki solutions
-Version: 2.0.1
+Version: 2.0.2
 Author: hulilei
 Maintainer: hulilei <hulilei@takewiki.com.cn>
 Description: user interface element for ui elements,latout and actions,

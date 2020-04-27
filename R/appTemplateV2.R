@@ -145,3 +145,86 @@ where Fpermissions ='",permission,"' and FappId='",app_id,"'")
   sidebarMenu <- getSideBarMenu(config)
   return(sidebarMenu)
 }
+
+
+
+
+#' 针对密码进行加密处理
+#'
+#' @param x 原始数据
+#'
+#' @return 返回值
+#' @import digest
+#' @export
+#'
+#' @examples
+#' password_md5
+password_md5 <- function(x) {
+  res <- sapply(x, digest, "md5")
+  names(res) <- NULL
+  return(res)
+  
+}
+
+#' 对比两个密码
+#'
+#' @param newPassword 新密码
+#' @param repPassword 重复密码
+#'
+#' @return 返回是否相等
+#' @export
+#'
+#' @examples
+#' password_equal()
+password_equal <- function(newPassword,repPassword) {
+  res <- newPassword[1] == repPassword[1]
+  return(res)
+  
+}
+
+
+#' check the orginal password
+#'
+#' @param fappId app
+#' @param fuser user
+#' @param fpassword pwd
+#'
+#' @return return value
+#' @import tsda
+#' @export
+#'
+#' @examples
+#' password_checkOriginal()
+password_checkOriginal <- function(fappId ='appTpl',fuser,fpassword ){
+ conn <- conn_rds('rdbe')  
+ sql <-paste0(" select fuser  from  t_md_userRight
+  where fappId ='",fappId,"' and fuser ='",fuser,"'  and fpassword ='",fpassword,"' ")
+ data <- tsda::sql_select(conn,sql)
+ ncount <- nrow(data)
+ if(ncount >0){
+   res <- TRUE
+ }else{
+   res <- FALSE
+ }
+ return(res)
+}
+
+
+#' 数据库设置新密码
+#'
+#' @param fappId 程序
+#' @param fuser 用户
+#' @param fpassword 密码
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples
+#' password_setNew()
+password_setNew <- function(fappId ='appTpl',fuser,fpassword){
+  
+  conn <- conn_rds('rdbe')  
+  sql <- paste0("update  a  set fpassword ='",fpassword,"'  from  t_md_userRight a 
+  where fappId ='",fappId,"' and fuser ='",fuser,"'")
+  tsda::sql_update(conn,sql)
+}
