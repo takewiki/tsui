@@ -228,3 +228,7 @@ password_setNew <- function(fappId ='appTpl',fuser,fpassword){
   where fappId ='",fappId,"' and fuser ='",fuser,"'")
   tsda::sql_update(conn,sql)
 }
+
+
+
+
