@@ -4,9 +4,14 @@
 \alias{mdl_sql_query}
 \title{处理查询组件}
 \usage{
-mdl_sql_query(id, label = "SQL查询分析器：",
-  value = c("select * \\n from t_item;"), fontSize = 16, theme = 10,
-  height = "300px")
+mdl_sql_query(
+  id,
+  label = "SQL查询分析器：",
+  value = c("select * \\n from t_item;"),
+  fontSize = 16,
+  theme = 10,
+  height = "300px"
+)
 }
 \arguments{
 \item{id}{内码}

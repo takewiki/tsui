@@ -4,8 +4,12 @@
 \alias{format_image}
 \title{Title image formmater}
 \usage{
-format_image(fileName = "demo.jpg", height = "400px",
-  width = "400px", alt = "image file holderplace")
+format_image(
+  fileName = "demo.jpg",
+  height = "400px",
+  width = "400px",
+  alt = "image file holderplace"
+)
 }
 \arguments{
 \item{fileName}{filename}

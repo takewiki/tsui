@@ -4,8 +4,11 @@
 \alias{page_dashboard_default}
 \title{定义仪表盘风格的页面}
 \usage{
-page_dashboard_default(HeadingName = "Basic dashboard", leftAreaList,
-  rightAreaList)
+page_dashboard_default(
+  HeadingName = "Basic dashboard",
+  leftAreaList,
+  rightAreaList
+)
 }
 \arguments{
 \item{HeadingName}{标题栏}

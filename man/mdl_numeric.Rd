@@ -4,8 +4,16 @@
 \alias{mdl_numeric}
 \title{处理小数型字段处理}
 \usage{
-mdl_numeric(id, label = "小数", is.test = FALSE, value = 10,
-  min = 0, max = 30, step = 0.5, width = "100\%")
+mdl_numeric(
+  id,
+  label = "小数",
+  is.test = FALSE,
+  value = 10,
+  min = 0,
+  max = 30,
+  step = 0.5,
+  width = "100\%"
+)
 }
 \arguments{
 \item{id}{ID}

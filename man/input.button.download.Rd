@@ -4,8 +4,11 @@
 \alias{input.button.download}
 \title{定义input.button.download的同名的入口函数}
 \usage{
-input.button.download(Id = "downloadButton1", label = "下载文件",
-  css_class = "downloadButton")
+input.button.download(
+  Id = "downloadButton1",
+  label = "下载文件",
+  css_class = "downloadButton"
+)
 }
 \arguments{
 \item{Id}{内码}

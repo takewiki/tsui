@@ -4,8 +4,12 @@
 \alias{userQueryField}
 \title{查询用户字段}
 \usage{
-userQueryField(conn = conn_rds("rdbe"), app_id = "appTpl",
-  user = "demo", key = "Fname")
+userQueryField(
+  conn = conn_rds("rdbe"),
+  app_id = "appTpl",
+  user = "demo",
+  key = "Fname"
+)
 }
 \arguments{
 \item{conn}{连接}

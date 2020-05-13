@@ -4,10 +4,19 @@
 \alias{ui_date}
 \title{ui_date实例化入口func}
 \usage{
-ui_date(inputId = "date1", label = "输入日期:", value = "",
-  min = "1984-01-01", max = "2100-12-31", format = "yyyy-mm-dd",
-  startview = "month", weekstart = 0L, language = "zh-CN",
-  width = "100\%", autoclose = TRUE)
+ui_date(
+  inputId = "date1",
+  label = "输入日期:",
+  value = "",
+  min = "1984-01-01",
+  max = "2100-12-31",
+  format = "yyyy-mm-dd",
+  startview = "month",
+  weekstart = 0L,
+  language = "zh-CN",
+  width = "100\%",
+  autoclose = TRUE
+)
 }
 \arguments{
 \item{inputId}{内码}

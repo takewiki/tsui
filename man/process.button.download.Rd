@@ -4,8 +4,13 @@
 \alias{process.button.download}
 \title{定义相应的处理}
 \usage{
-process.button.download(input, output, session, data,
-  filename = "下载文件.xlsx")
+process.button.download(
+  input,
+  output,
+  session,
+  data,
+  filename = "下载文件.xlsx"
+)
 }
 \arguments{
 \item{input}{输入}

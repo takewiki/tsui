@@ -4,8 +4,15 @@
 \alias{page_fluid_5Pin}
 \title{定义page_fluid_5个元素前2后3布局}
 \usage{
-page_fluid_5Pin(HeadingName, leftAreaList, R1C1List, R1C2List, R2C1List,
-  R2C2List, R2C3List)
+page_fluid_5Pin(
+  HeadingName,
+  leftAreaList,
+  R1C1List,
+  R1C2List,
+  R2C1List,
+  R2C2List,
+  R2C3List
+)
 }
 \arguments{
 \item{HeadingName}{标题}

@@ -4,8 +4,14 @@
 \alias{proc_download_button}
 \title{编写处理逻辑的框架}
 \usage{
-proc_download_button(input, output, session, data = iris,
-  filename = "下载文件.xlsx", func = write.xlsx)
+proc_download_button(
+  input,
+  output,
+  session,
+  data = iris,
+  filename = "下载文件.xlsx",
+  func = write.xlsx
+)
 }
 \arguments{
 \item{input}{输入}

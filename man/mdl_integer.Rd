@@ -4,8 +4,17 @@
 \alias{mdl_integer}
 \title{处理整数控件}
 \usage{
-mdl_integer(id, label = "整数", is.test = FALSE, min = 0,
-  max = 10, value = 3, step = 1, round = 0L, width = "100\%")
+mdl_integer(
+  id,
+  label = "整数",
+  is.test = FALSE,
+  min = 0,
+  max = 10,
+  value = 3,
+  step = 1,
+  round = 0L,
+  width = "100\%"
+)
 }
 \arguments{
 \item{id}{id}

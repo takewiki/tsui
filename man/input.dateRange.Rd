@@ -4,12 +4,21 @@
 \alias{input.dateRange}
 \title{定义input.dateRange同名实例化入口函数}
 \usage{
-input.dateRange(Id = "dateRangeInput1",
-  label = "请选择日期范围:", start = Sys.Date(),
-  end = Sys.Date() + 14, min = as.Date("1984-01-01"),
-  max = as.Date("2100-12-31"), format = "yyyy-mm-dd",
-  startview = "month", weekstart = 1L, language = "zh-CN",
-  separator = "到", width = "100\%", autoclose = TRUE)
+input.dateRange(
+  Id = "dateRangeInput1",
+  label = "请选择日期范围:",
+  start = Sys.Date(),
+  end = Sys.Date() + 14,
+  min = as.Date("1984-01-01"),
+  max = as.Date("2100-12-31"),
+  format = "yyyy-mm-dd",
+  startview = "month",
+  weekstart = 1L,
+  language = "zh-CN",
+  separator = "到",
+  width = "100\%",
+  autoclose = TRUE
+)
 }
 \arguments{
 \item{Id}{inputId}

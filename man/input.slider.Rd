@@ -4,9 +4,16 @@
 \alias{input.slider}
 \title{定义input.slider同名的入口函数}
 \usage{
-input.slider(Id = "sliderInput1", label = "请滚动执行数据:",
-  min = 0, max = 100, value = 60, step = 1, round = 0L,
-  width = "100\%")
+input.slider(
+  Id = "sliderInput1",
+  label = "请滚动执行数据:",
+  min = 0,
+  max = 100,
+  value = 60,
+  step = 1,
+  round = 0L,
+  width = "100\%"
+)
 }
 \arguments{
 \item{Id}{input内码}

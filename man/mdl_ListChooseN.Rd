@@ -4,10 +4,13 @@
 \alias{mdl_ListChooseN}
 \title{从多项选择题中选择元素}
 \usage{
-mdl_ListChooseN(id, label = "多项选择题",
-  choiceNames = list(icon("calendar"), icon("bed"), icon("cog"),
-  icon("bug")), choiceValues = list("calendar", "bed", "cog", "bug"),
-  selected = "bed")
+mdl_ListChooseN(
+  id,
+  label = "多项选择题",
+  choiceNames = list(icon("calendar"), icon("bed"), icon("cog"), icon("bug")),
+  choiceValues = list("calendar", "bed", "cog", "bug"),
+  selected = "bed"
+)
 }
 \arguments{
 \item{id}{内码}

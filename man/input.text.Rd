@@ -4,8 +4,14 @@
 \alias{input.text}
 \title{定义文本或密码输入框的实例化类}
 \usage{
-input.text(Id = "textInput1", label = "请输入文本", value = "",
-  width = "100\%", placeholder = "", isPassword = FALSE)
+input.text(
+  Id = "textInput1",
+  label = "请输入文本",
+  value = "",
+  width = "100\%",
+  placeholder = "",
+  isPassword = FALSE
+)
 }
 \arguments{
 \item{Id}{内码}

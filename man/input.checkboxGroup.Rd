@@ -4,10 +4,15 @@
 \alias{input.checkboxGroup}
 \title{定义input.checkboxGroup同名的入口函数}
 \usage{
-input.checkboxGroup(Id = "checkboxGroupInput1", label = "请选择:",
-  choiceNames = list(icon("calendar"), icon("bed"), icon("cog"),
-  icon("bug")), choiceValues = list("calendar", "bed", "cog", "bug"),
-  selected = "bug", inline = FALSE, width = "100\%")
+input.checkboxGroup(
+  Id = "checkboxGroupInput1",
+  label = "请选择:",
+  choiceNames = list(icon("calendar"), icon("bed"), icon("cog"), icon("bug")),
+  choiceValues = list("calendar", "bed", "cog", "bug"),
+  selected = "bug",
+  inline = FALSE,
+  width = "100\%"
+)
 }
 \arguments{
 \item{Id}{input内码}

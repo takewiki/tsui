@@ -1,7 +1,7 @@
 Package: tsui
 Type: Package
 Title: user interface elements from shiny,H5,css,js in takewiki solutions
-Version: 2.0.3
+Version: 2.0.4
 Author: hulilei
 Maintainer: hulilei <hulilei@takewiki.com.cn>
 Description: user interface element for ui elements,latout and actions,
@@ -12,7 +12,7 @@ Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Collate: 
     'aaa_defineClasses.R'
     'appTemplateV2.R'

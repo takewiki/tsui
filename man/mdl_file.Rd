@@ -4,8 +4,7 @@
 \alias{mdl_file}
 \title{处理单一文件控制}
 \usage{
-mdl_file(id, label = "单文件选择器：", is.test = FALSE,
-  fileType = ".xlsx")
+mdl_file(id, label = "单文件选择器：", is.test = FALSE, fileType = ".xlsx")
 }
 \arguments{
 \item{id}{内码}

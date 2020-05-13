@@ -4,10 +4,15 @@
 \alias{input.file}
 \title{定义input.file的同步入口函数}
 \usage{
-input.file(Id = "FileInput1", label = "上传文件1",
-  width = "auto", multiple = FALSE, accept = "",
+input.file(
+  Id = "FileInput1",
+  label = "上传文件1",
+  width = "auto",
+  multiple = FALSE,
+  accept = "",
   buttonLabel = "请选择文件...",
-  placeholder = "没有选任何文件")
+  placeholder = "没有选任何文件"
+)
 }
 \arguments{
 \item{Id}{内码}

@@ -4,9 +4,15 @@
 \alias{mdl_sql_conn}
 \title{撰写数据库连接组件}
 \usage{
-mdl_sql_conn(id, label = "SQL Server配置信息",
-  ip = "115.159.201.178", port = "1433", user_name = "sa",
-  password = "88888888", db_name = "demo")
+mdl_sql_conn(
+  id,
+  label = "SQL Server配置信息",
+  ip = "115.159.201.178",
+  port = "1433",
+  user_name = "sa",
+  password = "88888888",
+  db_name = "demo"
+)
 }
 \arguments{
 \item{id}{内码}

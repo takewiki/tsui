@@ -4,8 +4,12 @@
 \alias{userRight_upload}
 \title{上传用户数据}
 \usage{
-userRight_upload(conn = conn_rds("rdbe"), app_id = "appTpl",
-  data = readUserFile(), default_pwd = "123456")
+userRight_upload(
+  conn = conn_rds("rdbe"),
+  app_id = "appTpl",
+  data = readUserFile(),
+  default_pwd = "123456"
+)
 }
 \arguments{
 \item{conn}{连接信息}

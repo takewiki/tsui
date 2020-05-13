@@ -4,8 +4,7 @@
 \alias{input.button.action}
 \title{定义input.button.download的同名的入口函数}
 \usage{
-input.button.action(Id = "btn_action", label = "点击按纽",
-  width = "100\%")
+input.button.action(Id = "btn_action", label = "点击按纽", width = "100\%")
 }
 \arguments{
 \item{Id}{内码}

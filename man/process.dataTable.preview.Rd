@@ -4,8 +4,13 @@
 \alias{process.dataTable.preview}
 \title{dataTable预览通用逻辑处理}
 \usage{
-process.dataTable.preview(input, output, session, lengthMenu = c(10, 50,
-  100, 1000, 10000), pageLength = 10)
+process.dataTable.preview(
+  input,
+  output,
+  session,
+  lengthMenu = c(10, 50, 100, 1000, 10000),
+  pageLength = 10
+)
 }
 \arguments{
 \item{input}{输入}

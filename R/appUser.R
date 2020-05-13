@@ -13,7 +13,7 @@ readUserFile <- function(file="data-raw/sample_users.xlsx") {
                     col_types = c("text", "text", "text",
                                   "text", "text", "text", "text", "text",
                                   "text"))
-  res <- as.data.frame(res)
+  res <- tsdo::tbl_as_df(res)
   return(res)
   
 }

@@ -4,9 +4,15 @@
 \alias{mdl_textEditor}
 \title{处理编辑器模块}
 \usage{
-mdl_textEditor(id, label = "多行文本编码器输入：",
-  is.test = FALSE, value = c("文本编码器测试\\n测试换行"),
-  fontSize = 16, theme = 10, height = "200px")
+mdl_textEditor(
+  id,
+  label = "多行文本编码器输入：",
+  is.test = FALSE,
+  value = c("文本编码器测试\\n测试换行"),
+  fontSize = 16,
+  theme = 10,
+  height = "200px"
+)
 }
 \arguments{
 \item{id}{内码}

@@ -4,8 +4,13 @@
 \alias{run_download_button}
 \title{处理相应的逻辑}
 \usage{
-run_download_button(proc_func, id, data = iris,
-  filename = "下载文件.xlsx", func = write.xlsx)
+run_download_button(
+  proc_func,
+  id,
+  data = iris,
+  filename = "下载文件.xlsx",
+  func = write.xlsx
+)
 }
 \arguments{
 \item{proc_func}{相应的函数}

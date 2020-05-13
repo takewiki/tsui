@@ -4,11 +4,19 @@
 \alias{input.date}
 \title{定义input.date的同名入口函数}
 \usage{
-input.date(Id = "dateInput1", label = "请选择一个日期:",
-  value = Sys.Date(), min = as.Date("1984-01-01"),
-  max = as.Date("2100-12-31"), format = "yyyy-mm-dd",
-  startview = "month", weekstart = 1L, language = "zh-CN",
-  width = "100\%", autoclose = TRUE)
+input.date(
+  Id = "dateInput1",
+  label = "请选择一个日期:",
+  value = Sys.Date(),
+  min = as.Date("1984-01-01"),
+  max = as.Date("2100-12-31"),
+  format = "yyyy-mm-dd",
+  startview = "month",
+  weekstart = 1L,
+  language = "zh-CN",
+  width = "100\%",
+  autoclose = TRUE
+)
 }
 \arguments{
 \item{Id}{inputId}

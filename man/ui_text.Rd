@@ -4,8 +4,7 @@
 \alias{ui_text}
 \title{定义一个实例化函数，用于数据存储}
 \usage{
-ui_text(inputId = "txt1", label = "text1_caption", value = "",
-  width = "100\%")
+ui_text(inputId = "txt1", label = "text1_caption", value = "", width = "100\%")
 }
 \arguments{
 \item{inputId}{标签内码}

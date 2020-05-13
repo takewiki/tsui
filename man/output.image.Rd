@@ -4,10 +4,20 @@
 \alias{output.image}
 \title{定义output.image实例化入口函数}
 \usage{
-output.image(Id = "imageOutput1", width = "100\%", height = "400px",
-  click = "", dblclick = "", hover = "", hoverDelay = "",
-  hoverDelayType = "", brush = "", clickId = "", hoverId = "",
-  inline = FALSE)
+output.image(
+  Id = "imageOutput1",
+  width = "100\%",
+  height = "400px",
+  click = "",
+  dblclick = "",
+  hover = "",
+  hoverDelay = "",
+  hoverDelayType = "",
+  brush = "",
+  clickId = "",
+  hoverId = "",
+  inline = FALSE
+)
 }
 \arguments{
 \item{Id}{outputId内码}

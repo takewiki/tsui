@@ -4,8 +4,15 @@
 \alias{ui_number_slider}
 \title{定义使用创建ui_number_input实例化函数}
 \usage{
-ui_number_slider(inputId = "sliderInput1", label = "number slider1",
-  min = 1, max = 500, value = 300, step = 5, width = "400px")
+ui_number_slider(
+  inputId = "sliderInput1",
+  label = "number slider1",
+  min = 1,
+  max = 500,
+  value = 300,
+  step = 5,
+  width = "400px"
+)
 }
 \arguments{
 \item{inputId}{内码}

@@ -4,8 +4,7 @@
 \alias{page_fluid_4}
 \title{定义page_fluid_田字形模板4个元素}
 \usage{
-page_fluid_4(HeadingName, leftAreaList, R1C1List, R1C2List, R2C1List,
-  R2C2List)
+page_fluid_4(HeadingName, leftAreaList, R1C1List, R1C2List, R2C1List, R2C2List)
 }
 \arguments{
 \item{HeadingName}{标题}

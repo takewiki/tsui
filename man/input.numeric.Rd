@@ -4,8 +4,15 @@
 \alias{input.numeric}
 \title{定义input.numeric的同名函数}
 \usage{
-input.numeric(Id = "numericInput1", label = "请输入数值:",
-  value = 30, min = 5, max = 50, step = 1, width = "100\%")
+input.numeric(
+  Id = "numericInput1",
+  label = "请输入数值:",
+  value = 30,
+  min = 5,
+  max = 50,
+  step = 1,
+  width = "100\%"
+)
 }
 \arguments{
 \item{Id}{内码}

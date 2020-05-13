@@ -4,8 +4,13 @@
 \alias{mdl_dateRange}
 \title{处理日期范围字段}
 \usage{
-mdl_dateRange(id, label = "日期范围", is.test = FALSE,
-  startDate = Sys.Date(), endDate = Sys.Date() + 14)
+mdl_dateRange(
+  id,
+  label = "日期范围",
+  is.test = FALSE,
+  startDate = Sys.Date(),
+  endDate = Sys.Date() + 14
+)
 }
 \arguments{
 \item{id}{内码}

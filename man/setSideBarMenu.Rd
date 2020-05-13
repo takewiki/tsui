@@ -4,8 +4,11 @@
 \alias{setSideBarMenu}
 \title{根据角色与数据库设置边栏}
 \usage{
-setSideBarMenu(conn = conn_rds("rdbe"), app_id = "appTpl",
-  permission = "admin")
+setSideBarMenu(
+  conn = conn_rds("rdbe"),
+  app_id = "appTpl",
+  permission = "admin"
+)
 }
 \arguments{
 \item{conn}{数据库连接}

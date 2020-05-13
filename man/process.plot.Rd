@@ -4,8 +4,12 @@
 \alias{process.plot}
 \title{设置process.plot的处理函数}
 \usage{
-process.plot(input, output, session, plot_obj = quote(hist(faithful[, 2],
-  breaks = 30, col = "darkgray", border = "white")))
+process.plot(
+  input,
+  output,
+  session,
+  plot_obj = quote(hist(faithful[, 2], breaks = 30, col = "darkgray", border = "white"))
+)
 }
 \arguments{
 \item{input}{input}

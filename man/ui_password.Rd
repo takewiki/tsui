@@ -4,8 +4,12 @@
 \alias{ui_password}
 \title{ui_password的实例化function}
 \usage{
-ui_password(inputId = "password1", label = "输入密码:",
-  value = "888888", width = "100\%")
+ui_password(
+  inputId = "password1",
+  label = "输入密码:",
+  value = "888888",
+  width = "100\%"
+)
 }
 \arguments{
 \item{inputId}{内码}

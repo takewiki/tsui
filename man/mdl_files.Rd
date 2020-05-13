@@ -4,8 +4,7 @@
 \alias{mdl_files}
 \title{多个文件上传处理器}
 \usage{
-mdl_files(id, label = "多文件选择器：", is.test = FALSE,
-  fileType = ".xlsx")
+mdl_files(id, label = "多文件选择器：", is.test = FALSE, fileType = ".xlsx")
 }
 \arguments{
 \item{id}{内码}

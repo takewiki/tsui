@@ -4,8 +4,7 @@
 \alias{proc_question}
 \title{处理标准问的逻辑}
 \usage{
-proc_question(input, output, session,
-  table_name = "ques_standard_answer")
+proc_question(input, output, session, table_name = "ques_standard_answer")
 }
 \arguments{
 \item{input}{输入}
