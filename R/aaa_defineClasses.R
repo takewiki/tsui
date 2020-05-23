@@ -1,20 +1,18 @@
 #定义UI 元数据结构-----
 # 实现参数的传入，与单据的实际没有关系
 
-#1.1 定义文本字段类型的S4----
-#' 定义ui_text iption的特殊类，用于存储相应的界面数据
+
+#' Title
 #'
-#' @slot inputId character. 内码Id,用于input$inputId
-#' @slot label character.   标签
-#' @slot value character.   默认值
-#' @slot width character.  文本框宽度，默认为100%或400px
+#' @slot inputId character. 
+#' @slot label character. 
+#' @slot value character. 
+#' @slot width character. 
 #'
-#' @return 返回值
-#' @import shiny
+#' @return
 #' @export
 #'
-#' @examples 
-#' ui_text()
+#' @examples
 setClass("ui_text",
                       slot=c(inputId = "character",
                              label = "character",
