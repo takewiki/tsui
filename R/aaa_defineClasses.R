@@ -2,17 +2,17 @@
 # 实现参数的传入，与单据的实际没有关系
 
 
-#' Title
+#'定义文件类
 #'
 #' @slot inputId character. 
 #' @slot label character. 
 #' @slot value character. 
 #' @slot width character. 
 #'
-#' @return
+#' @return 返回值
 #' @export
 #'
-#' @examples
+#' @examples aa
 setClass("ui_text",
                       slot=c(inputId = "character",
                              label = "character",

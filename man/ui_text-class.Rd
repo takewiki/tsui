@@ -3,12 +3,12 @@
 \docType{class}
 \name{ui_text-class}
 \alias{ui_text-class}
-\title{Title}
+\title{定义文件类}
 \value{
-
+返回值
 }
 \description{
-Title
+定义文件类
 }
 \section{Slots}{
 
@@ -22,3 +22,6 @@ Title
 \item{\code{width}}{character.}
 }}
 
+\examples{
+aa
+}
