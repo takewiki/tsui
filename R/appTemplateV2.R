@@ -118,7 +118,7 @@ config_formatter <- function(data) {
 getUsers <- function(conn=conn_rds('rdbe'),app_id='appTpl') {
  # conn <- conn_rds('rdbe')
   sql <-paste0("select Fuser,Fpassword,Fpermissions,Fname from t_md_userRight
-where FappId ='",app_id,"'")
+where  Fdeleted = 0 and  FappId ='",app_id,"'")
   res <- tsda::sql_select(conn,sql)
   return(res)
   
