@@ -4,12 +4,14 @@
 \alias{mdl_text}
 \title{编写模块化的文本字段}
 \usage{
-mdl_text(id, label = "文本", is.test = FALSE)
+mdl_text(id, label = "文本", value = "", is.test = FALSE)
 }
 \arguments{
 \item{id}{内码字段}
 
 \item{label}{标签字段}
+
+\item{value}{设置默认值}
 
 \item{is.test}{是否测试模式}
 }

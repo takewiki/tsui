@@ -25,6 +25,7 @@ setClass("input.button.download", slots = c(css_class = "character"),
 input.button.download <- function(Id='downloadButton1',
                                   label='下载文件',
                                   css_class='downloadButton') {
+  #.Deprecated('input.button.download')
   res <- new('input.button.download');
   res2 <- initialize(res,Id=Id,
                          label=label,

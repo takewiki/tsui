@@ -5,6 +5,7 @@
 #' @param id  内码字段
 #' @param label 标签字段
 #' @param is.test 是否测试模式
+#' @param value 设置默认值
 #'
 #' @return 返回值
 #' @export
@@ -25,11 +26,11 @@
 #' }
 #'
 #' shinyApp(ui, server)
-mdl_text <- function(id, label = "文本",is.test=FALSE) {
+mdl_text <- function(id, label = "文本",value='',is.test=FALSE) {
   ns <- NS(id)
   if (is.test == FALSE){
     tagList(
-      tsui(ui_text(inputId = ns("mdl_text"),label = label))
+      tsui(ui_text(inputId = ns("mdl_text"),label = label,value = value))
     )
     
   }else{
